@@ -21,3 +21,8 @@ npm install bootstrap
 ]
 ```
 
+## Etape 3 : créer des pages et des composants
+```bash
+ng generate component xyz
+```
+
