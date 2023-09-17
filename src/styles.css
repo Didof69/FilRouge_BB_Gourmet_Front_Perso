@@ -1,9 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     background-color: #F6F1EB;
     font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
 }
 
 html {
