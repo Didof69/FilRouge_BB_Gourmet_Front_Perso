@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,10 +19,10 @@ import { InscriptionComponent } from './components/inscription/inscription.compo
 import { ListeAlimentComponent } from './components/liste-aliment/liste-aliment.component';
 import { ModifAlimentComponent } from './components/modif-aliment/modif-aliment.component';
 import { ModifEnfantComponent } from './components/modif-enfant/modif-enfant.component';
-import { PresentationComponent } from './components/presentation/presentation.component';
 import { ProfilEnfantComponent } from './components/profil-enfant/profil-enfant.component';
 import { ProfilUtilisateurComponent } from './components/profil-utilisateur/profil-utilisateur.component';
 import { SupprAlimentComponent } from './components/suppr-aliment/suppr-aliment.component';
+import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
 
 @NgModule({
   declarations: [
@@ -41,14 +42,15 @@ import { SupprAlimentComponent } from './components/suppr-aliment/suppr-aliment.
     ListeAlimentComponent,
     ModifAlimentComponent,
     ModifEnfantComponent,
-    PresentationComponent,
     ProfilEnfantComponent,
     ProfilUtilisateurComponent,
-    SupprAlimentComponent
+    SupprAlimentComponent,
+    FilterBarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

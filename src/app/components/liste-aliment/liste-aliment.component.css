@@ -1,0 +1,33 @@
+li {
+    list-style-type: none;
+    font-size: 14px;
+    line-height: 16px;
+    padding-left: 0;
+}
+
+.autre-info {
+    width: 15%;
+}
+
+.container-aliments {
+    width: 80%;
+}
+
+button {
+    margin: 0;
+    border-radius: 2rem;
+    width: 54px;
+    height: 28px;
+    color: white;
+    border: none;
+    font-size: 8px;
+}
+
+.modifier {
+    background-color: #225777;
+    margin-right: 0.2rem;
+}
+
+.supprimer {
+    background-color: #982312;
+}

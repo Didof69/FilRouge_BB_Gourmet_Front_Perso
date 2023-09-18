@@ -9,14 +9,14 @@
     box-sizing: border-box;
 }
 
-html {
+/* html {
     position: relative;
     min-height: 100%;
 }
 
 .footer {
-    /* margin-top: 2rem; */
+    margin-top: 2rem;
     position: absolute;
     bottom: 0;
     width: 100%;
-}
+} */
