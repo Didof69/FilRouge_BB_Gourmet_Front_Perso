@@ -8,7 +8,6 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { InscriptionComponent } from './components/inscription/inscription.component';
 import { ConnexionComponent } from './components/connexion/connexion.component';
 import { ProfilEnfantComponent } from './components/profil-enfant/profil-enfant.component';
-import { ProfilUtilisateurComponent } from './components/profil-utilisateur/profil-utilisateur.component';
 import { AjoutEnfantComponent } from './components/ajout-enfant/ajout-enfant.component';
 import { ModifEnfantComponent } from './components/modif-enfant/modif-enfant.component';
 import { ModifAlimentComponent } from './components/modif-aliment/modif-aliment.component';
@@ -22,8 +21,8 @@ const routes: Routes = [
   { path: 'aliment/update', component: ModifAlimentComponent },
   { path: 'aliment/delete', component: SupprAlimentComponent },
   { path: 'profil', component: UtilisateurComponent },
-  { path: 'profil/signup', component: InscriptionComponent },
-  { path: 'profil/login', component: ConnexionComponent },
+  { path: 'auth/register', component: InscriptionComponent },
+  { path: 'auth/login', component: ConnexionComponent },
   { path: 'profil/child', component: ProfilEnfantComponent },
   { path: 'profil/child/add', component: AjoutEnfantComponent },
   { path: 'profil/child/update/:id', component: ModifEnfantComponent },
