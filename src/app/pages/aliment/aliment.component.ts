@@ -35,7 +35,7 @@ export class AlimentComponent {
       this.alimentsToDisplay = aliments;
 
       this.alimentsToDisplayFilter = [...this.alimentsToDisplay]; //permet d'initialiser le tableau à filtrer
-      // console.log(this.alimentsToDisplayFilter);
+      this.trierTabFiltre(this.alimentsToDisplayFilter);
 
       //initialise le tableau des catégories
       this.tabCategories = [
@@ -153,9 +153,9 @@ export class AlimentComponent {
 
   //extrait les aliments ayant les restrictions de tabRestriction
   extraireAlimentsInterdits() {
-    this.alimentsToDisplayRestriction = this.alimentsToDisplay.filter(
-      (e) => !this.filtreRestriction(e)
-    );
+    this.alimentsToDisplayRestriction = this.alimentsToDisplay
+      .filter((e) => !this.filtreRestriction(e))
+      .sort();
     this.alimentsToDisplayFilter = this.alimentsToDisplayRestriction;
   }
 
@@ -178,6 +178,23 @@ export class AlimentComponent {
         .filter((e) => this.filtreSaison(e));
     }
 
+    this.trierTabFiltre(this.alimentsToDisplayFilter);
     // console.log('le saveTabFilter à la sortie de saveFilter()',this.saveFilterTab);
+  }
+
+  //permet de trier par ordre alpha un tableau d'aliments grâce au libellé
+  trierTabFiltre(tab: Aliment[]) {
+    tab.sort((a, b) => {
+      const libelleA = a.libelle.toLowerCase();
+      const libelleB = b.libelle.toLowerCase();
+
+      if (libelleA < libelleB) {
+        return -1;
+      } else if (libelleA > libelleB) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
   }
 }
