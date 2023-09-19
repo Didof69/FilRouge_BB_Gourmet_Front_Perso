@@ -8,4 +8,5 @@ import { Aliment } from 'src/app/models/aliment';
 })
 export class ListeAlimentComponent {
   @Input() aliments!: Aliment[];
+  @Input() profilUtilisateur!: boolean;
 }

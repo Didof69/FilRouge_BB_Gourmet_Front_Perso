@@ -8,6 +8,9 @@ import { AlimentService } from 'src/app/services/aliment.service';
   styleUrls: ['./aliment.component.css'],
 })
 export class AlimentComponent {
+  //permer d'afficher la page en mode admin
+  profilUtilisateur: boolean = false;
+
   alimentsToDisplay: Aliment[] = []; //tableau d'aliments reçu de l'api
   alimentsToDisplayRestriction: Aliment[] = []; //tableau excluant les aliment avec restriction
   alimentsToDisplayFilter: Aliment[] = []; //tableau que l'on filtre avec saveFilterTab
@@ -31,7 +34,13 @@ export class AlimentComponent {
   constructor(private alimentService: AlimentService) {}
 
   ngOnInit(): void {
+    //verifie le statut admin
+    if (localStorage.getItem('profilUtilisateur') == 'true') {
+      this.profilUtilisateur = true
+    }
+
     this.alimentService.getAliments().subscribe((aliments) => {
+    
       this.alimentsToDisplay = aliments;
       this.alimentsToDisplayFilter = [...this.alimentsToDisplay]; //permet d'initialiser le tableau à filtrer
       this.trierTabFiltre(this.alimentsToDisplayFilter);

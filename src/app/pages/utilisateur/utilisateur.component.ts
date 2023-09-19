@@ -22,6 +22,7 @@ export class UtilisateurComponent {
         console.log('retour get user:', response);
         this.affichage = true //modifie le composant à afficher
         this.utilisateur = response
+        localStorage.setItem('profilUtilisateur',this.utilisateur.admin.toString())
         },
         error: (error) => {
           console.log("Echec get user", error);
