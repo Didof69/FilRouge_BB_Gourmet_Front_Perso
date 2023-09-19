@@ -23,7 +23,7 @@ export class InscriptionComponent {
     this.utilisateurService.inscriptionUtilisateur(this.utilisateur).subscribe({
       next: (response) => {
         console.log("Inscription réussie:", response);  
-        this.router.navigate(['/auth/login']);  
+        this.router.navigate(['/profil-utilisateur/inscription']);  
       },
       error: (error) => {
         console.log("Echec de l'inscription", error); 

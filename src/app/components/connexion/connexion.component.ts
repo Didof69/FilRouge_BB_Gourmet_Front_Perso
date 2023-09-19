@@ -26,7 +26,7 @@ export class ConnexionComponent {
         console.log('Token reçu:', response.accessToken);
 
         localStorage.setItem('token', response.accessToken);
-        
+
         this.router.navigate(['/profil-utilisateur']);
       },
       error: (error) => {

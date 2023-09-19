@@ -22,8 +22,8 @@ const routes: Routes = [
   { path: 'aliment/update', component: ModifAlimentComponent },
   { path: 'aliment/delete', component: SupprAlimentComponent },
   { path: 'profil-utilisateur', component: UtilisateurComponent },
-  { path: 'auth/register', component: InscriptionComponent },
-  { path: 'auth/login', component: ConnexionComponent },
+  { path: 'profil-utilisateur/inscription', component: InscriptionComponent },
+  { path: 'profil-utilisateur/connexion', component: ConnexionComponent },
   { path: 'profil-utilisateur/child', component: ProfilEnfantComponent },
   { path: 'profil-utilisateur/child/add', component: AjoutEnfantComponent },
   {

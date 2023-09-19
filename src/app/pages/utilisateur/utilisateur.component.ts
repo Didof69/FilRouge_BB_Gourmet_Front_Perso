@@ -9,7 +9,8 @@ import { UtilisateurService } from 'src/app/services/utilisateur.service';
 })
 export class UtilisateurComponent {
   utilisateur!: Utilisateur ;
-
+  affichage: boolean = false
+  
   constructor(
     private utilisateurService: UtilisateurService,
   ) {}
@@ -18,7 +19,9 @@ export class UtilisateurComponent {
 
     this.utilisateurService.getProfilUtilisateur().subscribe({
         next: (response) => {
-          console.log('retour get user:', response);
+        console.log('retour get user:', response);
+        this.affichage = true
+        this.utilisateur = response
         },
         error: (error) => {
           console.log("Echec get user", error);

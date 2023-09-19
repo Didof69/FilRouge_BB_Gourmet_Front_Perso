@@ -1,3 +1,4 @@
 <app-navbar></app-navbar>
-<p>utilisateur works!</p>
+<app-profil-utilisateur *ngIf="affichage"></app-profil-utilisateur>
+<app-inscription *ngIf="!affichage"></app-inscription>
 <app-footer></app-footer>
