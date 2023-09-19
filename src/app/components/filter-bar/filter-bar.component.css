@@ -1,7 +1,7 @@
 .filterbar {
     width: 0;
     overflow: hidden;
-    transition: width 0.3s;
+    transition: width 0.5s;
 }
 
 .filterbar.open {
@@ -9,11 +9,15 @@
 }
 
 button {
-    height: 2rem;
-    width: 0.5rem;
+    /* margin-left: 20vh; */
+    height: 5rem;
+    width: 2rem;
     background-color: #225777;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    border-radius: 0 50% 50% 0;
+    /* padding: 10px 20px; */
     cursor: pointer;
+    font-size: 14px;
 }
+

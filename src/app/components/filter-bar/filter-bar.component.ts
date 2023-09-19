@@ -15,12 +15,13 @@ export class FilterBarComponent {
   @Output() newRestrictionEvent = new EventEmitter<string[]>();
   @Output() newSaisonEvent = new EventEmitter<string[]>();
 
-  isFilterbarOpen = false; // Vous pouvez utiliser cette variable pour suivre l'état de la barre de filtrage
-
+  // mise en place du mouvement de la filter-bar
+  isFilterbarOpen = false;
   toggleFilterbar() {
     this.isFilterbarOpen = !this.isFilterbarOpen;
   }
-  
+  //
+
   categorieFiltre: string[] = [];
   ageFiltre: number[] = [];
   restrictionFiltre: string[] = [];
@@ -158,4 +159,3 @@ export class FilterBarComponent {
     this.newSaisonEvent.emit(this.saisonFiltre);
   }
 }
-

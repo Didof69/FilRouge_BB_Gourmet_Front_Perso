@@ -9,6 +9,9 @@
     box-sizing: border-box;
 }
 
+.container-principal{
+    padding-bottom: 6rem;
+}
 /* html {
     position: relative;
     min-height: 100%;

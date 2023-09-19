@@ -1,6 +1,8 @@
-<button (click)="toggleFilterbar()">Filtrer</button>
-<div class="card pb-2" [ngClass]="{'filterbar': true, 'open': isFilterbarOpen}">
-  <div class="card-header" style="background-color: rgba(0, 112, 62, 0.115)">Filtres</div>
+<div class="d-flex container-principal">
+<div class="card pb-2" [ngClass]="{ filterbar: true, open: isFilterbarOpen }">
+  <div class="card-header" style="background-color:  #225777; color:white">
+    Filtres
+  </div>
 
   <ul class="list-group list-group-flush">
     <li class="list-group-item mb-2">Catégories</li>
@@ -28,9 +30,7 @@
         id="{{ age }}"
         (change)="onCheckAge($event)"
       />
-      <label class="form-check-label" for="{{ age }}">
-          {{ age }} mois
-      </label>
+      <label class="form-check-label" for="{{ age }}"> {{ age }} mois </label>
     </div>
 
     <li class="list-group-item border mt-2 mb-2">Restrictions</li>
@@ -43,11 +43,11 @@
         (change)="onCheckRestriction($event)"
       />
       <label class="form-check-label" for="{{ restriction }}">
-       {{ restriction }}
+        {{ restriction }}
       </label>
-      </div>
+    </div>
 
-          <li class="list-group-item border mt-2 mb-2">Saisons</li>
+    <li class="list-group-item border mt-2 mb-2">Saisons</li>
     <div class="form-check" *ngFor="let saison of tabSaisons">
       <input
         class="form-check-input"
@@ -57,8 +57,12 @@
         (change)="onCheckSaison($event)"
       />
       <label class="form-check-label" for="{{ saison }}">
-       {{ saison }}
+        {{ saison }}
       </label>
-      </div>
+    </div>
   </ul>
+</div>
+
+<button (click)="toggleFilterbar()"> > </button>
+
 </div>
