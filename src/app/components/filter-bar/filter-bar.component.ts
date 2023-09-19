@@ -100,7 +100,7 @@ export class FilterBarComponent {
   onCheckRestriction(e: Event) {
     //recupérer la valeur de la checkbox et son etat
     const target = e.target as HTMLInputElement;
-    
+          // console.log('avant if ' + target.value + ' tabR '+this.tabRestrictions);
     if (target.checked) {
       if (this.restrictionFiltre.length === this.tabRestrictions.length) {
         this.restrictionFiltre = [];
@@ -108,24 +108,37 @@ export class FilterBarComponent {
       } else {
         this.restrictionFiltre.push(target.value);
       }
-      // console.log(this.categorieFiltre);
+      // console.log(
+      //   'dans if ===' + this.restrictionFiltre + ' tabR ' + this.tabRestrictions
+      // );
     } else {
       if (this.restrictionFiltre.includes(target.value)) {
         this.restrictionFiltre = this.restrictionFiltre.filter(
           (e) => e != target.value
         );
+        // console.log(
+        //   'dans if ' + this.restrictionFiltre + ' tabR ' + this.tabRestrictions
+        // );
       } else {
         this.restrictionFiltre.push(target.value);
+        console.log(
+          'dans if dernier else' +
+            this.restrictionFiltre +
+            ' tabR ' +
+            this.tabRestrictions
+        );
       }
-      // console.log(this.restrictionFiltre);
     }
 
     if (this.restrictionFiltre.length === 0) {
-      this.restrictionFiltre = [...this.tabRestrictions];
+      this.restrictionFiltre = [];
+      // console.log(
+      //   'dans if === 0' +
+      //     this.restrictionFiltre +
+      //     ' tabR ' +
+      //     this.tabRestrictions
+      // );
     }
-
-    // console.log('filtres restriction utilisés', this.restrictionFiltre);
-
     this.newRestrictionEvent.emit(this.restrictionFiltre);
   }
 
