@@ -12,20 +12,24 @@ import { AjoutEnfantComponent } from './components/ajout-enfant/ajout-enfant.com
 import { ModifEnfantComponent } from './components/modif-enfant/modif-enfant.component';
 import { ModifAlimentComponent } from './components/modif-aliment/modif-aliment.component';
 import { SupprAlimentComponent } from './components/suppr-aliment/suppr-aliment.component';
+import { AjoutAlimentComponent } from './components/ajout-aliment/ajout-aliment.component';
 
 const routes: Routes = [
   { path: '', component: CommencerComponent },
   { path: 'home', component: AccueilComponent },
   { path: 'aliment', component: AlimentComponent },
-  { path: 'aliment/add', component: AjoutEnfantComponent },
+  { path: 'aliment/add', component: AjoutAlimentComponent },
   { path: 'aliment/update', component: ModifAlimentComponent },
   { path: 'aliment/delete', component: SupprAlimentComponent },
-  { path: 'profil', component: UtilisateurComponent },
+  { path: 'profil-utilisateur', component: UtilisateurComponent },
   { path: 'auth/register', component: InscriptionComponent },
   { path: 'auth/login', component: ConnexionComponent },
-  { path: 'profil/child', component: ProfilEnfantComponent },
-  { path: 'profil/child/add', component: AjoutEnfantComponent },
-  { path: 'profil/child/update/:id', component: ModifEnfantComponent },
+  { path: 'profil-utilisateur/child', component: ProfilEnfantComponent },
+  { path: 'profil-utilisateur/child/add', component: AjoutEnfantComponent },
+  {
+    path: 'profil-utilisateur/child/update/:id',
+    component: ModifEnfantComponent,
+  },
   { path: '**', component: NotFoundComponent },
 ];
 

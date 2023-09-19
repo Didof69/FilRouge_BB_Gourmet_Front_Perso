@@ -26,3 +26,23 @@ npm install bootstrap
 ng generate component xyz
 ```
 
+# config NgFor dans app.module.ts
+```
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+...
+
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+  ],
+
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```

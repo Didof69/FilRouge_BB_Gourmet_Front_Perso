@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Utilisateur } from '../models/utilisateur';
 import { LoginUtilisateur } from '../models/loginUtilisteur';
@@ -13,6 +13,14 @@ export class UtilisateurService {
 
   constructor(private http: HttpClient) {}
 
+  setHeaders() {
+    const jwtToken = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${jwtToken}`,
+    });
+    return headers;
+  }
+  
   inscriptionUtilisateur(data: Utilisateur): Observable<Utilisateur> {
     return this.http.post<Utilisateur>(`${this.baseApiUrl}/register`, data);
   }
