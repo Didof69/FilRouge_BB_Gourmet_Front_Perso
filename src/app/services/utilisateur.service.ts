@@ -9,7 +9,7 @@ import { ReponseConnexion } from '../models/reponseConnexion';
   providedIn: 'root',
 })
 export class UtilisateurService {
-  private baseApiUrl = 'http://localhost:3000/api/auth';
+  private baseApiUrl = 'http://localhost:3000/api';
 
   constructor(private http: HttpClient) {}
 
@@ -22,10 +22,25 @@ export class UtilisateurService {
   }
   
   inscriptionUtilisateur(data: Utilisateur): Observable<Utilisateur> {
-    return this.http.post<Utilisateur>(`${this.baseApiUrl}/register`, data);
+    return this.http.post<Utilisateur>(
+      `${this.baseApiUrl}/auth/register`,
+      data
+    );
   }
 
   connexionUtilisateur(data: LoginUtilisateur): Observable<ReponseConnexion> {
-    return this.http.post<ReponseConnexion>(`${this.baseApiUrl}/login`, data);
+    return this.http.post<ReponseConnexion>(
+      `${this.baseApiUrl}/auth/login`,
+      data
+    );
   }
+
+  getProfilUtilisateur(): Observable<Utilisateur>{
+    const headers = this.setHeaders();
+    return this.http.get<Utilisateur>(
+      `${this.baseApiUrl}/utilisateurs`,
+      { headers }
+    );
+   };
+
 }
