@@ -100,7 +100,7 @@ export class FilterBarComponent {
   onCheckRestriction(e: Event) {
     //recupérer la valeur de la checkbox et son etat
     const target = e.target as HTMLInputElement;
-
+    
     if (target.checked) {
       if (this.restrictionFiltre.length === this.tabRestrictions.length) {
         this.restrictionFiltre = [];

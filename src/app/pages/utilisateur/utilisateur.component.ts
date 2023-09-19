@@ -9,7 +9,7 @@ import { UtilisateurService } from 'src/app/services/utilisateur.service';
 })
 export class UtilisateurComponent {
   utilisateur!: Utilisateur ;
-  affichage: boolean = false
+  affichage: boolean = false //permet de savoir quel compsant affiché
   
   constructor(
     private utilisateurService: UtilisateurService,
@@ -20,7 +20,7 @@ export class UtilisateurComponent {
     this.utilisateurService.getProfilUtilisateur().subscribe({
         next: (response) => {
         console.log('retour get user:', response);
-        this.affichage = true
+        this.affichage = true //modifie le composant à afficher
         this.utilisateur = response
         },
         error: (error) => {

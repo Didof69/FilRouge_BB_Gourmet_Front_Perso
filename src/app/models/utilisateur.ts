@@ -1,3 +1,5 @@
+import { Enfant } from "./enfant";
+
 export interface Utilisateur {
   id?: number;
   nom: string;
@@ -5,4 +7,5 @@ export interface Utilisateur {
   email: string;
   mot_de_passe?: string;
   admin: boolean;
+  enfants?: Enfant[];
 }
