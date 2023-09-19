@@ -33,7 +33,6 @@ export class AlimentComponent {
   ngOnInit(): void {
     this.alimentService.getAliments().subscribe((aliments) => {
       this.alimentsToDisplay = aliments;
-
       this.alimentsToDisplayFilter = [...this.alimentsToDisplay]; //permet d'initialiser le tableau à filtrer
       this.trierTabFiltre(this.alimentsToDisplayFilter);
 
@@ -162,8 +161,7 @@ export class AlimentComponent {
   //sauvegarde des filtres à afficher
   //  rechercher le bon typage
   saveFilter(saveFilter: any) {
-    // console.log("le saveTabFilter à l'entrée de saveFilter()",this.saveFilterTab);
-    console.log(this.alimentsToDisplayRestriction);
+    // console.log(this.alimentsToDisplayRestriction);
 
     if (
       this.saveFilterTab.categorie.length >= 1 ||

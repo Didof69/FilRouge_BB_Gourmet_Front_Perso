@@ -2,13 +2,15 @@
     width: 0;
     overflow: hidden;
     transition: width 0.5s;
+
 }
 
 .filterbar.open {
-    width: 16rem;
+    width: 14rem;
+
 }
 
-button {
+#btnFilterBar {
     /* margin-left: 20vh; */
     height: 5rem;
     width: 2rem;
@@ -21,3 +23,17 @@ button {
     font-size: 14px;
 }
 
+.accordion-body {
+    height: 1rem;
+    display: flex;
+    align-items: center;
+
+}
+
+label {
+    padding-left: 5px;
+}
+
+.accordion-button {
+    height: 1rem;
+}

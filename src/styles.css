@@ -4,14 +4,16 @@
 *::before {
     margin: 0;
     padding: 0;
-    background-color: #F6F1EB;
+    /* background-color: #F6F1EB; */
     font-family: "Roboto", sans-serif;
     box-sizing: border-box;
 }
 
-.container-principal{
+.container-principal {
     padding-bottom: 6rem;
+    background-color: #F6F1EB;
 }
+
 /* html {
     position: relative;
     min-height: 100%;
